@@ -58,8 +58,9 @@ name=$(<$OUTPUT)
 
 case $respose in
     ${DIALOG_OK})
-        command="useradd --user-group --groups www-data --home-dir /var/www/${name} --create-home --shell /bin/bash -p ${PASSWORD} ${name}"
+        command="useradd --user-group --groups www-data --home-dir /var/www/${name} --create-home --shell /bin/bash ${name}"
         execorecho "${command}"
+        execorecho "echo \"${name}:${PASSWORD}\" | chpasswd"
         ;;
     ${DIALOG_CANCEL})
         echo "Cancel pressed."
