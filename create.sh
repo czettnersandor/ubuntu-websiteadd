@@ -58,7 +58,7 @@ name=$(<$OUTPUT)
 
 case $respose in
     ${DIALOG_OK})
-        command="useradd --user-group --groups www-data --home-dir /var/www/${name} --create-home -p ${PASSWORD} ${name}"
+        command="useradd --user-group --groups www-data --home-dir /var/www/${name} --create-home --shell /bin/bash -p ${PASSWORD} ${name}"
         execorecho "${command}"
         ;;
     ${DIALOG_CANCEL})
