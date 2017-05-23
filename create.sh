@@ -36,7 +36,7 @@ function execorecho(){
         echo Debug mode $DEBUG
         echo "$command"
     else
-        eval command
+        eval $command
     fi
 }
 
